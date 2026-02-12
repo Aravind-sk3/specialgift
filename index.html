@@ -121,12 +121,26 @@
                 window.location.href = 'success.html';
             });
             
-            noBtn.addEventListener('mouseover', () => {
+            const moveButton = () => {
                 const randomX = Math.random() * (window.innerWidth - 100);
                 const randomY = Math.random() * (window.innerHeight - 50);
                 noBtn.style.position = 'fixed';
                 noBtn.style.left = randomX + 'px';
                 noBtn.style.top = randomY + 'px';
+            };
+            
+            // Mouse events
+            noBtn.addEventListener('mouseover', moveButton);
+            
+            // Touch events for mobile
+            noBtn.addEventListener('touchstart', (e) => {
+                e.preventDefault();
+                moveButton();
+            });
+            
+            noBtn.addEventListener('touchmove', (e) => {
+                e.preventDefault();
+                moveButton();
             });
         });
     </script>
