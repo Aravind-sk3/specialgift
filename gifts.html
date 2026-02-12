@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gifts</title>
+    <link rel="stylesheet" href="./demofiles/WillYouBeMyValentine3_files/index-CA15fKqK.css">
+    <link rel="stylesheet" href="./demofiles/WillYouBeMyValentine3_files/vendor-BdrnINUN.css">
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        }
+        
+        .valentine-root {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 100%;
+            height: 100%;
+            padding: 20px;
+        }
+        
+        .card {
+            background: white;
+            border-radius: 20px;
+            padding: 25px;
+            text-align: center;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.2);
+            max-width: 600px;
+        }
+        
+        .yay {
+            font-size: 32px;
+            color: #ff1744;
+            margin: 0 0 15px 0;
+        }
+        
+        .gifts-container {
+            display: flex;
+            gap: 15px;
+            justify-content: center;
+            flex-wrap: wrap;
+            margin: 15px 0;
+        }
+        
+        .gift-card {
+            background: #f5f5f5;
+            border-radius: 15px;
+            padding: 15px;
+            flex: 1;
+            min-width: 150px;
+            max-width: 200px;
+            box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease;
+        }
+        
+        .gift-card:hover {
+            transform: scale(1.05);
+        }
+        
+        .gift-title {
+            color: #333;
+            margin: 0 0 10px 0;
+            font-size: 16px;
+        }
+        
+        .gift-image {
+            width: 100%;
+            height: 120px;
+            border-radius: 10px;
+            overflow: hidden;
+        }
+        
+        .gift-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        
+        .btn {
+            padding: 12px 30px;
+            font-size: 16px;
+            border: none;
+            border-radius: 25px;
+            cursor: pointer;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            transition: all 0.3s ease;
+            font-weight: bold;
+            margin-top: 20px;
+        }
+        
+        .btn:hover {
+            transform: scale(1.05);
+            box-shadow: 0 5px 20px rgba(102, 126, 234, 0.4);
+        }
+    </style>
+</head>
+<body>
+    <div class="valentine-root">
+        <div class="card">
+            <h1 class="yay">💝 Your Valentine Gifts 💝</h1>
+            <div class="gifts-container">
+                <div class="gift-card" onclick="window.location.href='gift-1.html'" style="cursor: pointer;">
+                    <h3 class="gift-title">Gift 1</h3>
+                    <div class="gift-image">
+                        <img alt="gift 1" src="./demofiles/WillYouBeMyValentine3_files/gift-pqiTG7w0.jpg">
+                    </div>
+                </div>
+                <div class="gift-card" onclick="window.location.href='gift-2.html'" style="cursor: pointer;">
+                    <h3 class="gift-title">Gift 2</h3>
+                    <div class="gift-image">
+                        <img alt="gift 2" src="./demofiles/WillYouBeMyValentine3_files/gift-pqiTG7w0.jpg">
+                    </div>
+                </div>
+            </div>
+            <button class="btn" onclick="window.location.href='letter.html'">View My Love Letter 💌</button>
+        </div>
+    </div>
+</body>
+</html>

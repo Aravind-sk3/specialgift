@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gift 1 - Our Memories</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            font-family: 'Arial', sans-serif;
+        }
+        
+        .valentine-root {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 100%;
+            height: 100%;
+            padding: 20px;
+        }
+        
+        .card {
+            background: white;
+            border-radius: 20px;
+            padding: 25px;
+            text-align: center;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.2);
+            max-width: 700px;
+            max-height: 85vh;
+            overflow-y: auto;
+        }
+        
+        .title {
+            font-size: 28px;
+            color: #ff1744;
+            margin: 0 0 20px 0;
+        }
+        
+        .gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 15px;
+            margin: 20px 0;
+        }
+        
+        .gallery-item {
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease;
+            cursor: pointer;
+        }
+        
+        .gallery-item:hover {
+            transform: scale(1.05);
+            box-shadow: 0 5px 15px rgba(102, 126, 234, 0.4);
+        }
+        
+        .gallery-item img {
+            width: 100%;
+            height: 150px;
+            object-fit: cover;
+            display: block;
+        }
+        
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 1000;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.8);
+            justify-content: center;
+            align-items: center;
+        }
+        
+        .modal.show {
+            display: flex;
+        }
+        
+        .modal-content {
+            max-width: 90%;
+            max-height: 90%;
+            border-radius: 10px;
+            background: white;
+            padding: 20px;
+            position: relative;
+        }
+        
+        .modal-content img {
+            max-width: 100%;
+            max-height: 600px;
+            border-radius: 10px;
+        }
+        
+        .close-modal {
+            position: absolute;
+            top: 10px;
+            right: 15px;
+            font-size: 28px;
+            font-weight: bold;
+            cursor: pointer;
+            color: #ff1744;
+        }
+        
+        .close-modal:hover {
+            color: #ff5252;
+        }
+        
+        .btn {
+            padding: 10px 30px;
+            font-size: 14px;
+            border: none;
+            border-radius: 25px;
+            cursor: pointer;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            transition: all 0.3s ease;
+            font-weight: bold;
+            margin-top: 15px;
+        }
+        
+        .btn:hover {
+            transform: scale(1.05);
+            box-shadow: 0 5px 20px rgba(102, 126, 234, 0.4);
+        }
+    </style>
+</head>
+<body>
+    <div class="valentine-root">
+        <div class="card">
+            <h1 class="title">💝 Our Memories Together 💝</h1>
+            <p style="color: #666; margin: 10px 0;">Click on any image to view it</p>
+            <div class="gallery" id="gallery">
+                <!-- Images will be loaded by JavaScript -->
+            </div>
+            <button class="btn" onclick="window.location.href='gifts.html'">Back to Gifts</button>
+        </div>
+    </div>
+
+    <div class="modal" id="imageModal">
+        <div class="modal-content">
+            <span class="close-modal" onclick="closeModal()">&times;</span>
+            <img id="modalImage" src="" alt="Full view">
+        </div>
+    </div>
+
+    <script>
+        const images = [
+            './pics/1757763888828.png',
+            './pics/1757764987759.png',
+            './pics/1757767155710.png',
+            './pics/1757767660934.png',
+            './pics/1757789341930.png',
+            './pics/1757791292516.png',
+            './pics/1758043442744.png',
+            './pics/IMG_20250413_114624918_HDR.jpg',
+            './pics/IMG_20250803_130355849.jpg',
+            './pics/IMG_20250816_114807526_HDR_AE.jpg',
+            './pics/IMG_20250817_101726411_HDR_AE.jpg',
+            './pics/New Project [91AA2E5].png'
+        ];
+
+        function loadGallery() {
+            const gallery = document.getElementById('gallery');
+            images.forEach(src => {
+                const item = document.createElement('div');
+                item.className = 'gallery-item';
+                item.onclick = () => openModal(src);
+                
+                const img = document.createElement('img');
+                img.src = src;
+                img.alt = 'Memory';
+                img.onerror = () => {
+                    item.style.opacity = '0.5';
+                    item.title = 'Image not found';
+                };
+                
+                item.appendChild(img);
+                gallery.appendChild(item);
+            });
+        }
+
+        function openModal(src) {
+            const modal = document.getElementById('imageModal');
+            const modalImage = document.getElementById('modalImage');
+            modalImage.src = src;
+            modal.classList.add('show');
+        }
+
+        function closeModal() {
+            const modal = document.getElementById('imageModal');
+            modal.classList.remove('show');
+        }
+
+        document.getElementById('imageModal').addEventListener('click', function(event) {
+            if (event.target === this) {
+                closeModal();
+            }
+        });
+
+        // Load gallery when page loads
+        window.addEventListener('load', loadGallery);
+    </script>
+</body>
+</html>

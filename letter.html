@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Letter</title>
+    <link rel="stylesheet" href="./demofiles/WillYouBeMyValentine4_files/index-CA15fKqK.css">
+    <link rel="stylesheet" href="./demofiles/WillYouBeMyValentine4_files/vendor-BdrnINUN.css">
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        }
+        
+        .valentine-root {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 100%;
+            height: 100%;
+            padding: 20px;
+        }
+        
+        .card {
+            background: white;
+            border-radius: 20px;
+            padding: 25px;
+            text-align: center;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.2);
+            max-width: 450px;
+        }
+        
+        .yay {
+            font-size: 28px;
+            color: #ff1744;
+            margin: 0 0 15px 0;
+        }
+        
+        .envelope-container {
+            margin: 15px 0;
+            perspective: 1000px;
+        }
+        
+        .envelope {
+            width: 220px;
+            height: 150px;
+            background: white;
+            border: 2px solid #ff1744;
+            border-radius: 10px;
+            margin: 0 auto;
+            position: relative;
+            transform-style: preserve-3d;
+            transition: transform 0.6s;
+        }
+        
+        .envelope:hover {
+            transform: rotateY(15deg);
+        }
+        
+        .envelope-flap {
+            width: 100%;
+            height: 50%;
+            background: linear-gradient(135deg, #ff1744 0%, #ff6b9d 100%);
+            border-radius: 10px 10px 0 0;
+            position: absolute;
+            top: 0;
+            left: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 30px;
+        }
+        
+        .envelope-body {
+            width: 100%;
+            height: 50%;
+            background: #fff;
+            border-radius: 0 0 10px 10px;
+            position: absolute;
+            bottom: 0;
+            left: 0;
+        }
+        
+        .btn {
+            padding: 12px 30px;
+            font-size: 16px;
+            border: none;
+            border-radius: 25px;
+            cursor: pointer;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            transition: all 0.3s ease;
+            font-weight: bold;
+            margin-top: 20px;
+        }
+        
+        .btn:hover {
+            transform: scale(1.05);
+            box-shadow: 0 5px 20px rgba(102, 126, 234, 0.4);
+        }
+    </style>
+</head>
+<body>
+    <div class="valentine-root">
+        <div class="card">
+            <h1 class="yay">Love Letter 💌</h1>
+            <div class="envelope-container">
+                <div class="envelope">
+                    <div class="envelope-flap">❤️</div>
+                    <div class="envelope-body"> Love u di pondatti❤️</div>
+                </div>
+            </div>
+            <button class="btn" onclick="window.location.href='final_letter.html'">Read the Full Letter</button>
+        </div>
+    </div>
+</body>
+</html>
